@@ -8,7 +8,8 @@
 //    <span class="temp">98°</span>
 //  </div >
 // And add it to the DOM in the .header-container component
-const headerContainer = documemt.querySelector('.header-container')
+
+
 
 function Header() {
 
@@ -33,10 +34,13 @@ function Header() {
 
 //set text content
 
-    hdr.textContent = data.
+    date.textContent = 'March 28, 2019'
+    title.textContent = 'Lambda Times'
+    temp.textContent = '98°'
 
 
-    return headerContainer;
-
-
+    return hdr;
 }
+
+const headerContainer = document.querySelector('.header-container')
+    

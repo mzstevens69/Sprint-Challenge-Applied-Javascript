@@ -27,3 +27,37 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
   .catch(error => {
     console.log("You got nothing---TRY AGAIN", error);
   });
+
+  const card = document.querySelector('.cards-container');
+
+  function cardMaker(object) {
+
+    //create elements
+
+    const artCard = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const container = document.createElement('div');
+    const pic = document.createElement('img');
+    const authorName = document.createElement('span');
+//classes
+    artCard.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    container.classList.add('img-container');
+//structure
+
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(container)
+    author.appendChild(authorName)
+    container.appendChild(pic);
+    card.appendChild(cardInfo);
+
+//set text content
+    pic.src = object.data.authorPhoto_url;
+    headline.textContent = object.data.headline;
+    author.textContent = object.data.authorName;
+
+
+  }
