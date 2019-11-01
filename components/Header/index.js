@@ -31,4 +31,12 @@ function Header() {
     hdr.appendChild(title);
     hdr.appendChild(temp);
 
+//set text content
+
+    hdr.textContent = data.
+
+
+    return headerContainer;
+
+
 }
