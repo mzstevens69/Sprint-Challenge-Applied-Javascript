@@ -30,18 +30,28 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+Document Object model is a way to change the structure of a web page, content and styling which is arranged like a tree with nodes.
+
 2. What is an event?
+
+It is a way to interact with a webpage. Mouse and keyboard, etc are interactions that could trigger an event.
 
 3. What is an event listener?
 
+A way to detect specific events on specific elements. 
+
 4. Why would we convert a NodeList into an Array?
+
+You would gain all the Array.prototype methods used on arrays.
 
 5. What is a component?
 
+It is a reusable piece piece of code used to build elements that share the same functionality and styling. 
+
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
+* [x] Fork the project into your GitHub user account
+* [x] Clone the forked project into a directory on your machine
 * [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
 * [ ] You are now ready to build this project with your preferred IDE
 
@@ -49,7 +59,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
 * [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
 
