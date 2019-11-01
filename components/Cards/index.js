@@ -21,8 +21,22 @@
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response);
-    const myCard = cardMaker(response);
-    cards.appendChild(myCard);
+    const getArt = response.data.articles;
+    getArt.javascript.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.bootstrap.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.technology.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.jquery.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.node.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
   })
   .catch(error => {
     console.log("You got nothing---TRY AGAIN", error);
@@ -37,27 +51,27 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
     const artCard = document.createElement('div');
     const headline = document.createElement('div');
     const author = document.createElement('div');
-    const container = document.createElement('div');
+    const contPic = document.createElement('div');
     const pic = document.createElement('img');
     const authorName = document.createElement('span');
 //classes
     artCard.classList.add('card');
     headline.classList.add('headline');
     author.classList.add('author');
-    container.classList.add('img-container');
+    contPic.classList.add('img-container');
 //structure
 
     card.appendChild(headline);
     card.appendChild(author);
-    author.appendChild(container)
+    author.appendChild(contPic)
     author.appendChild(authorName)
-    container.appendChild(pic);
-    card.appendChild(cardInfo);
+    contPic.appendChild(pic);
+   
 
 //set text content
-    pic.src = object.data.authorPhoto_url;
-    headline.textContent = object.data.headline;
-    author.textContent = object.data.authorName;
+    pic.src = object.authorPhoto;
+    headline.textContent = object.headline;
+    authorName.textContent = object.authorName;
 
-
+    return artCard;
   }

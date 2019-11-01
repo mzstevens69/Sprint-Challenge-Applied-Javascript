@@ -34,13 +34,15 @@ function Header() {
 
 //set text content
 
-    date.textContent = 'March 28, 2019'
-    title.textContent = 'Lambda Times'
-    temp.textContent = '98°'
+    date.textContent = 'March 28, 2019';
+    title.textContent = 'Lambda Times';
+    temp.textContent = '98°';
 
 
-    return hdr;
+    return hdr
 }
 
 const headerContainer = document.querySelector('.header-container')
     
+headerContainer.appendChild(Header())
+
