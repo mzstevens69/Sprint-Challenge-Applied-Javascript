@@ -22,6 +22,23 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response);
     const getArt = response.data.articles;
+    //some DRY super clean code by the Amazing COBE//
+    /* axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    // console.log(response);
+    const topicArray = Object.values(response.data.articles);
+    // console.log(topicArray);
+    topicArray.forEach(f => {
+      f.forEach(x => {
+        cards.appendChild(createCard(x.headline, x.authorPhoto, x.authorName));
+      });
+    });
+  })
+  .catch(error => {
+    console.log("The data was not returned", error);
+  });
+ */
     getArt.javascript.forEach(item => {
         card.appendChild(cardMaker(item));
     })
@@ -45,6 +62,8 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
   const card = document.querySelector('.cards-container');
 
   function cardMaker(object) {
+  //dry way below    
+ //  function createCard(hl, imgSrc, name) {   
 
     //create elements
 
