@@ -17,3 +17,80 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    console.log(response);
+    const getArt = response.data.articles;
+    //some DRY super clean code by the Amazing COBE//
+    /* axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    // console.log(response);
+    const topicArray = Object.values(response.data.articles);
+    // console.log(topicArray);
+    topicArray.forEach(f => {
+      f.forEach(x => {
+        cards.appendChild(createCard(x.headline, x.authorPhoto, x.authorName));
+      });
+    });
+  })
+  .catch(error => {
+    console.log("The data was not returned", error);
+  });
+ */
+    getArt.javascript.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.bootstrap.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.technology.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.jquery.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+    getArt.node.forEach(item => {
+        card.appendChild(cardMaker(item));
+    })
+  })
+  .catch(error => {
+    console.log("You got nothing---TRY AGAIN", error);
+  });
+
+  const card = document.querySelector('.cards-container');
+
+  function cardMaker(object) {
+  //dry way below    
+ //  function createCard(hl, imgSrc, name) {   
+
+    //create elements
+
+    const artCard = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const contPic = document.createElement('div');
+    const pic = document.createElement('img');
+    const authorName = document.createElement('span');
+//classes
+    artCard.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    contPic.classList.add('img-container');
+//structure
+
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(contPic)
+    author.appendChild(authorName)
+    contPic.appendChild(pic);
+   
+
+//set text content
+    pic.src = object.authorPhoto;
+    headline.textContent = object.headline;
+    authorName.textContent = object.authorName;
+
+    return artCard;
+  }
